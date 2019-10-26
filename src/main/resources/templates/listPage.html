@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>list</title>
+</head>
+<body>
+<div>
+    <table style="border: solid 1px #aaaaaa;">
+        <thead>
+        <tr>
+            <th>name</th>
+            <th>age</th>
+            <th>time</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:if="${list!=null}" th:each="item :${list}">
+            <td th:text="${item.name}"></td>
+            <td th:text="${item.age}"></td>
+            <td th:text="${#dates.format(item.createDate,'yyyy-MM-dd')}"></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
